@@ -23,7 +23,7 @@ RelativeLayout layout;
             @Override
             public void onClick(View view) {
                 // Create the Snackbar
-                Snackbar snackbar = Snackbar.make(layout, "Sample Text", Snackbar.LENGTH_LONG);
+                final Snackbar snackbar = Snackbar.make(layout, "Sample Text", Snackbar.LENGTH_LONG);
                 // Get the Snackbar's layout view
                 Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
                 // Hide the text
@@ -39,6 +39,7 @@ RelativeLayout layout;
                     @Override
                     public void onClick(View view) {
                         Toast.makeText(MainActivity.this, "cancel clicked", Toast.LENGTH_SHORT).show();
+                        snackbar.dismiss();
                     }
                 });
                 TextView tvText = (TextView) snackView.findViewById(R.id.tvText);
